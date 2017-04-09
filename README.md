@@ -1,5 +1,7 @@
 PAGES
 - all should include back button
+- colors to use: 
+- font(s) to use: 
 
 VIEWING/ADDING SCRIPTS
 - view, add buttons on homepage

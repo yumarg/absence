@@ -1,0 +1,41 @@
+.content {
+	margin: 30px;
+}
+
+.title {
+	text-align: center;
+	width: 500px;
+	margin: 0 auto;
+	font-size: 40px;
+}
+
+#view {
+	width: 900px;
+	height: 400px;
+	margin: 0 auto;
+	padding: 50px 0px;
+
+}
+
+
+.actions {
+	width: 400px;
+	margin: 0 auto;
+	margin-top: 50px;
+}
+
+.viewScript,
+.addScript {
+	padding-top: 20px;
+	padding-bottom: 20px;
+	text-align: center;
+	font-size: 30px;
+	background-color: #be9ad3;
+	margin-top: 30px;
+}
+
+input[type=file] {
+    display:block;
+    height:0;
+    width:0;
+}

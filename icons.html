@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <!--imported Font Awesome Icons-->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+    <!--imported Lato font-->    
+    <link href="http://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css"/>
+    <title>Icons</title>	
+</head>
+<body>
+	<!--List of Icons used in app-->
+	<!--regular icons have class 'icon' and will have color themeColors.main-->
+	<!--disabled icons have class 'disabledIcon' and will have color themeColors.disabled-->
+	<!--highlighted text will have color themeColors.highlighted-->
+	<div style="margin: 20px; text-align: center">
+		<h1 id="title" style="font-size: 40px; width: 120px; margin: 0 auto">Icons</h1>
+		<div style="font-size: 20px">
+			<p>- view scripts: <i class="icon fa fa-file-text-o" aria-hidden="true"></i></p>
+			<p>- add: <i class="icon fa fa-plus" aria-hidden="true"></i></p>
+			<p>- back: <i class="icon fa fa-arrow-circle-o-left" aria-hidden="true"></i></p>
+			<p>- edit: <i class="icon fa fa-pencil-square-o" aria-hidden="true"></i></p>
+			<p>- rehearse: <i class="icon fa fa-file-audio-o" aria-hidden="true"></i></p>
+			<p>- listen: <i class="icon fa fa-volume-up" aria-hidden="true"></i>&nbsp;&nbsp;<i class="disabledIcon fa fa-volume-up" aria-hidden="true"></i></p>
+			<p>- record: <i class="icon fa fa-microphone" aria-hidden="true"></i></p>
+			<p>- comment: <i class="icon fa fa-comment" aria-hidden="true"></i>&nbsp;&nbsp;<i class="disabledIcon fa fa-comment" aria-hidden="true"></i></p>
+			<p>- save: <i class="icon fa fa-floppy-o" aria-hidden="true"></i>&nbsp;&nbsp;<i class="disabledIcon fa fa-floppy-o" aria-hidden="true"></i></p>
+			<p>- continue: <i class="icon fa fa-forward" aria-hidden="true"></i></p>			
+			<p>- play: <i class="icon fa fa-play" aria-hidden="true"></i>&nbsp;&nbsp;<i class="disabledIcon fa fa-play" aria-hidden="true"></i></p>
+			<p>- pause: <i class="icon fa fa-pause" aria-hidden="true"></i></p>
+			<p>- stop: <i class="icon fa fa-stop" aria-hidden="true"></i></p>
+		</div>
+	</div>
+
+<script type="text/javascript">
+	(function() {
+		// themeFonts
+		var themeFonts = {main: "Lato"};
+		document.body.style.fontFamily = themeFonts.main;
+
+		// themeColors
+		var themeColors = {main: "#610996", highlighted: "#be9ad3", disabled: "#838383"};
+		
+		var allIcons = document.getElementsByClassName("icon");
+		for (var icon = 0; icon < allIcons.length; icon++) {
+			allIcons[icon].style.color = themeColors.main;
+		}
+		document.getElementById("title").style.backgroundColor = themeColors.highlighted;
+
+		var allDisabledIcons = document.getElementsByClassName("disabledIcon");
+		for (var disabledIcon = 0; disabledIcon < allDisabledIcons.length; disabledIcon++) {
+			allDisabledIcons[disabledIcon].style.color = themeColors.disabled;
+		}
+	})();
+</script>
+</body>
+</html>

@@ -1,7 +1,13 @@
-PAGES
+GENERAL
 - all should include back button
-- colors to use: 
-- font(s) to use: 
+- colors to use: {main: "#610996", highlighted: "#be9ad3", disabled: "#838383"} *subject to change*
+- font(s) to use: {main: "Lato"} *subject to change*
+- use camelCase
+- all .css files go in 'css' folder
+- all .js files go in 'js' folder
+- all image files go in 'images' folder
+- all audio files go in 'audio' folder
+- all icons in 'icons.html'
 
 VIEWING/ADDING SCRIPTS
 - view, add buttons on homepage

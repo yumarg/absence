@@ -1,0 +1,61 @@
+.content {
+	margin: 30px;
+}
+
+.title {
+	text-align: center;
+	width: 500px;
+	margin: 0 auto;
+	font-size: 40px;
+}
+
+#view {
+	width: 900px;
+	height: 400px;
+	margin: 0 auto;
+	margin-top: 100px;
+	padding: 50px 0px;
+	border: 5px solid #000;
+	border-radius: 10px;
+}
+
+.actorLine {
+	display: table;
+	width: 600px;
+	margin: 0 auto;
+	font-size: 25px;
+}
+
+.actor {
+	display: inline-block;
+	width: 150px;
+	font-style: italic;
+	vertical-align: top;
+	text-align: center;
+}
+
+.line {
+	display: inline-block;
+	width: 420px;
+	margin-left: 30px;
+}
+
+.actions {
+	width: 400px;
+	margin: 0 auto;
+	margin-top: 150px;
+}
+
+.record,
+.play,
+.save {
+	float: left;
+	cursor: pointer;
+	width: 100px;
+	height: 100px;
+	font-size: 40px;
+	text-align: center;
+	padding-top: 25px;
+	margin-left: 30px;
+	border-radius: 50%;
+}

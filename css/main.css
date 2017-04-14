@@ -1,0 +1,27 @@
+* {
+	-webkit-box-sizing: border-box;
+ 	-moz-box-sizing: border-box;
+  	box-sizing: border-box; 
+  	margin: 0;
+  	padding: 0;
+}
+
+body {
+	font-family: 'Lato', sans-serif;
+}
+
+a {
+	text-decoration: none;
+}
+
+.highlighted {
+	background-color: #be9ad3;
+}
+
+.regular {
+	color: #610996; 
+}
+
+.disabled {
+	color: #838383;
+}

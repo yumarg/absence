@@ -8,7 +8,12 @@ $(document).ready(function() {
 
 	$(".actions div").hover(
 		function() {
-			$(this).css("border", "2px solid " + themeColors.regular);
+			if ($($(this).find("i")[0]).hasClass("regular")) {
+				$(this).css("border", "2px solid " + themeColors.regular);
+			}
+			else {
+				$(this).css("border", "none");
+			}
 		},
 		function() {
 			$(this).css("border", "none");

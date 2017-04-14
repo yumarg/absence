@@ -1,7 +1,10 @@
 GENERAL
+- include Bootstrap CSS in <head>: <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" type="text/css"/> 
+- include Bootstrap JS in <head>: <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+- include jQuery in <head>: <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+- colors to use: {main: "#610996", highlighted: "#be9ad3", disabled: "#838383"} **subject to change
+- font(s) to use: {main: "Lato"} **subject to change
 - all should include back button
-- colors to use: {main: "#610996", highlighted: "#be9ad3", disabled: "#838383"} *subject to change*
-- font(s) to use: {main: "Lato"} *subject to change*
 - use camelCase
 - all .css files go in 'css' folder
 - all .js files go in 'js' folder

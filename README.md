@@ -2,15 +2,15 @@ GENERAL
 - include Bootstrap CSS in head: ```<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" type="text/css"/> ```
 - include Bootstrap JS in head: ```<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>```
 - include jQuery in head: ```<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>```
-- colors to use: {main: "#610996", highlighted: "#be9ad3", disabled: "#838383"} **subject to change
-- font(s) to use: {main: "Lato"} **subject to change
+- colors to use: {regular: "#610996", highlighted: "#be9ad3", disabled: "#838383"} **subject to change
+- font(s) to use: {regular: "Lato"} **subject to change
 - all should include back button
 - use camelCase
 - all .css files go in 'css' folder
 - all .js files go in 'js' folder
 - all image files go in 'images' folder
 - all audio files go in 'audio' folder
-- all icons in 'icons.html'
+- all icons are in 'icons.html'
 
 VIEWING/ADDING SCRIPTS
 - view, add buttons on homepage
@@ -21,12 +21,15 @@ VIEWING/ADDING SCRIPTS
 ADDING COMMENTS TO SCRIPT & SCROLLING
 - comment toggle button/functionality
 - scrollbar
+- link to recordAudio page
+- link to rehearsing page
 - progress view of where you are in script/some way of showing progress
 
 ADDING AUDIO TO SCRIPT
 - microphone button/functionality
 - play button/functionality
 - save button/functionality
+- link to record and comment view page
 
 REHEARSING SCRIPTS
 - choose which line to start rehearsing

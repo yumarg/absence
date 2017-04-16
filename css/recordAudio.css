@@ -9,6 +9,14 @@
 	font-size: 40px;
 }
 
+#close {
+	display: inline-block;
+	float:right;
+	margin-top: -45px;
+	font-size: 40px;
+	cursor: pointer;
+}
+
 #view {
 	width: 900px;
 	height: 400px;

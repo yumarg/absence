@@ -6,6 +6,17 @@ $(document).ready(function() {
 
 	$(".record").addClass("highlighted");
 
+	$("#close").hover(
+		function() {
+			$("#close i").removeClass("fa-window-close-o");
+			$("#close i").addClass("fa-window-close");
+		},
+		function() {
+			$("#close i").removeClass("fa-window-close");
+			$("#close i").addClass("fa-window-close-o");			
+		}
+	);
+
 	$(".actions div").hover(
 		function() {
 			if ($($(this).find("i")[0]).hasClass("regular")) {

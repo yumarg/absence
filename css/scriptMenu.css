@@ -17,6 +17,19 @@
 	text-align: center;
 }
 
+#subhead{
+	text-align: left;
+	width: 50%;
+	margin: 0 auto;
+	font-size: 20px;
+}
+
+#subhead2{
+	text-align: left;
+	width: 50%;
+	margin: 0 auto;
+	font-size: 17px;
+}
 
 .actions {
 	width: 400px;
@@ -39,3 +52,44 @@ input[type=file] {
     height:0;
     width:0;
 }
+
+
+#playName {
+    width:50%; 
+    font-size: 20px;
+    font-family: 'Lato'
+    font-weight: bold;
+}
+
+#playName:focus{
+    outline:none;
+    border-color: #be9ad3;
+    box-shadow:0 0 5px #be9ad3;
+}
+
+#menu { 
+	width:50%; 
+	height:200px; 
+	overflow:hidden; 
+	overflow-y:scroll;
+	margin: 0 auto;
+	text-align: left;
+}
+
+#menu2 { 
+	width:50%; 
+	height:100px; 
+	overflow:hidden; 
+	overflow-y:scroll;
+	margin: 0 auto;
+	text-align: left;
+}
+
+#menu ul li:hover {
+    border: 1px solid #610996;
+}
+
+#menu2 ul li:hover {
+    border: 1px solid #610996;
+}
+

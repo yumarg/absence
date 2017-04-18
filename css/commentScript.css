@@ -1,0 +1,117 @@
+.content {
+	margin: 30px;
+}
+
+.title {
+	text-align: center;
+	width: 500px;
+	margin: 0 auto;
+	font-size: 40px;
+}
+
+#close {
+	display: inline-block;
+	float:right;
+	margin-top: -45px;
+	font-size: 40px;
+	cursor: pointer;
+}
+
+#view {
+	width: 900px;
+	height: 400px;
+	margin: 0 auto;
+	margin-top: 100px;
+	padding: 0px 0px;
+	border: 5px solid #000;
+	border-radius: 10px;
+}
+
+.actorLine {
+	display: table;
+	width: 600px;
+	margin: 0 auto;
+	font-size: 25px;
+}
+
+.actor {
+	display: inline-block;
+	width: 150px;
+	font-style: italic;
+	font-weight: bold;
+	vertical-align: top;
+	text-align: center;
+}
+
+.line {
+	display: inline-block;
+	width: 420px;
+	margin-left: 30px;
+}
+
+thead, tbody {
+    display: block;
+    font-size: 30px;
+    border-collapse: collapse;
+}
+td {
+	padding-top: .5em;
+	padding-bottom: .5em;
+}
+tbody.scrollable {
+    height: 385px;
+    overflow-y: auto;
+    width: 850px;
+}
+
+.button {
+    background-color: #FFFFFF;
+    border: none;
+    color: none;
+    padding: 0px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 0px 0px;
+    cursor: pointer;
+    outline: none;
+}
+
+.window_container {
+    position: fixed;
+    top: 400px;
+    left: 50%;
+    width: 300px;
+    margin-left: -150px;
+    height: 100px;
+    margin-top: -25px;
+    background: #551A8B;
+    border: 5px solid black;
+    background: #551A8B;
+    border-radius: 10px;
+}
+
+#centerbox {
+    left: 50%;
+    position: absolute;
+}
+
+dialog {
+    padding: 5px 10px 20px 20px;
+}
+
+#progress {
+	border: 5px solid black;
+	border-radius: 10px;
+	position: fixed;
+	left: 25%;
+    width: 50%;
+    background-color: gray;
+}
+#bar {
+    width: 75%;
+    height: 30px;
+    background-color: #551A8B;
+}
+
+

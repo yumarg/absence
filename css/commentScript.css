@@ -47,6 +47,7 @@
 	display: inline-block;
 	width: 420px;
 	margin-left: 30px;
+	text-align: left;
 }
 
 .actions {
@@ -55,7 +56,7 @@
 	margin-top: 10px;
 }
 
-.rehease {
+.rehearse {
 	padding-top: 10px;
 	padding-bottom: 20px;
 	
@@ -63,8 +64,10 @@
 	background-color: #be9ad3;
 	margin-top: 0px;
 
-	border: 5px solid black;
+	/*border: 5px solid black;*/
 	border-radius: 10px;
+
+	cursor: pointer;
 }
 
 thead, tbody {
@@ -83,7 +86,8 @@ tbody.scrollable {
 }
 
 .button {
-    background-color: #FFFFFF;
+	background-color: Transparent;
+    /*background-color: #FFFFFF;*/
     border: none;
     color: none;
     padding: 0px 20px;
@@ -104,7 +108,7 @@ tbody.scrollable {
     height: 100px;
     margin-top: -25px;
     background: #be9ad3;
-    border: 5px solid black;
+    border: 5px solid #551A8B;
     border-radius: 10px;
 }
 
@@ -123,7 +127,7 @@ dialog {
 }
 
 #progress {
-	border: 5px solid black;
+	border: 2px solid black;
 	border-radius: 10px;
 	position: fixed;
 	left: 25%;
@@ -134,6 +138,10 @@ dialog {
     width: 75%;
     height: 30px;
     background-color: #551A8B;
+}
+
+.selectable {
+	cursor: pointer;
 }
 
 

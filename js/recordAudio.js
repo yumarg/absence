@@ -22,7 +22,7 @@ $(document).ready(function() {
 			}			
 		},
 		function() {
-			$(this).css("border", "none");
+			$(this).css("border", "2px solid #fff");
 		}
 	);
 
@@ -34,7 +34,7 @@ $(document).ready(function() {
 		},
 		function() {
 			if ($(this).hasClass("highlighted")) {
-				$(this).css("border", "none");
+				$(this).css("border", "2px solid #fff");
 			}
 		}
 	);
@@ -47,7 +47,7 @@ $(document).ready(function() {
 		},
 		function() {
 			if ($(this).hasClass("highlighted")) {
-				$(this).css("border", "none");
+				$(this).css("border", "2px solid #fff");
 			}
 		}
 	);

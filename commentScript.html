@@ -22,7 +22,7 @@
 			
 			<table align="center">
 			    <tbody class='scrollable' align="center">
-			        <tr class='selectable'>
+			        <tr class='selectable' id='default'>
 			            <td><div class="actor">Juliet:</div></td>
 			            <td colspan=3><div class="line">O Romeo, Romeo! wherefore art thou Romeo?</div></td>
 			            <td><button class="button missing fa fa-volume-up"  id="record-1" aria-hidden="true" width=''></button>
@@ -175,6 +175,10 @@ comments['cmt-2'] = 'Make sure to enunciate this section!'
 var button = document.getElementById('cmt-2')
 $(button).removeClass('disabled')
 $(button).addClass('regular')
+
+//
+$('#default').css("border", "2px solid " + themeColors.regular)
+$('#default').css("background-color", themeColors.highlighted);
 
 </script>
 

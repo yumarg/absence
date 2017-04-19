@@ -2,6 +2,8 @@
 	margin: 30px;
 }
 
+
+
 .title {
 	text-align: center;
 	width: 500px;
@@ -17,15 +19,21 @@
 	cursor: pointer;
 }
 
+
+
 #view {
 	width: 900px;
 	height: 400px;
+
 	margin: 0 auto;
 	margin-top: 100px;
 	padding: 50px 0px;
+
 	border: 5px solid #000;
 	border-radius: 10px;
 }
+
+
 
 .actorLine {
 	display: table;
@@ -48,23 +56,47 @@
 	margin-left: 30px;
 }
 
-.actions {
-	width: 400px;
-	margin: 0 auto;
-	margin-top: 150px;
-}
 
-.lineButton{
-	width:200px;
-	padding-top: 20px;
-	padding-bottom: 20px;
-	
-	font-size: 30px;
-	background-color: #be9ad3;
-	margin-top: 30px;
+
+.actions {
+	position: absolute;
+	top: 450px;
+	padding-left: 200px;
+
+	width: 1000px;
+	margin: 0 auto;
 }
 
 .nextLine{
-	width: 50px;
-	height: 50px;
+	position: relative;
+	display: inline-block;
+	cursor: pointer;
+	width: 80px;
+	height: 80px;
+	font-size: 40px;
+	text-align: center;
+	padding-top: 15px;
+	margin-left: 30px;
+	border-radius: 50%;
+
+	float: left;
 }
+
+.lineButton{
+	position: relative;
+	display: inline-block;
+	width:200px;
+	height: 60px;
+
+	margin-top: 30px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+
+	float: left;
+	
+	font-size: 30px;
+	background-color: #be9ad3;
+}
+
+
+

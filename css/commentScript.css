@@ -49,6 +49,24 @@
 	margin-left: 30px;
 }
 
+.actions {
+	width: 400px;
+	margin: 0 auto;
+	margin-top: 10px;
+}
+
+.rehease {
+	padding-top: 10px;
+	padding-bottom: 20px;
+	
+	font-size: 30px;
+	background-color: #be9ad3;
+	margin-top: 0px;
+
+	border: 5px solid black;
+	border-radius: 10px;
+}
+
 thead, tbody {
     display: block;
     font-size: 30px;
@@ -85,7 +103,7 @@ tbody.scrollable {
     margin-left: -150px;
     height: 100px;
     margin-top: -25px;
-    background: #551A8B;
+    background: #be9ad3;
     border: 5px solid black;
     border-radius: 10px;
 }

@@ -31,7 +31,7 @@ $(document).ready(function() {
 
 	$('.addScript').click(function() {
     	console.log('add '+ $('input[type=text]').val() +' with part '+ $(selected).text());
-    	//window.location.href = "scriptsMenu.html";
+    	window.location.href = "scriptsMenu.html";
 	});
 
 });

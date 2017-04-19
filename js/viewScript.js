@@ -27,7 +27,7 @@ $(document).ready(function() {
 
 	$('.viewScript').click(function() {
     	console.log('see the script of '+ $(selected).text());
-    	//window.location.href = "next.html";
+    	window.location.href = "commentScript.html";
 	});
 
 });

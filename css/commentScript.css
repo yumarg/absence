@@ -87,8 +87,12 @@ tbody.scrollable {
     margin-top: -25px;
     background: #551A8B;
     border: 5px solid black;
-    background: #551A8B;
     border-radius: 10px;
+}
+
+#text {
+	width: 250px;
+	height: 60px;
 }
 
 #centerbox {

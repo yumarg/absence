@@ -25,3 +25,7 @@ a {
 .disabled {
 	color: #838383;
 }
+
+.missing {
+	color: transparent;
+}

@@ -22,12 +22,11 @@ $(document).ready(function() {
 			if ($($(this).find("i")[0]).hasClass("regular")) {
 				$(this).css("border", "2px solid " + themeColors.regular);
 			}
-			else {
-				$(this).css("border", "none");
-			}
 		},
 		function() {
-			$(this).css("border", "none");
+			if ($($(this).find("i")[0]).hasClass("regular")) {
+				$(this).css("border", "none");
+			}
 		}
 	);
 
@@ -61,7 +60,6 @@ $(document).ready(function() {
 				$(this).removeClass("highlighted");
 			}
 			$(".record").addClass("highlighted");
-			$(".save").removeClass("highlighted");
 			save = false;
 		}
 	});
@@ -71,6 +69,7 @@ $(document).ready(function() {
 			pulse();
 			$(this).addClass("highlighted");			
 			play = true;
+			saved = true;
 			$(".record").addClass("highlighted");	
 			enablePlay();		
 		}
@@ -90,30 +89,36 @@ $(document).ready(function() {
 			}, 400);
 		}
 		else {
-			enableSave();			
+			enableSave();		
 			$(".record").addClass("highlighted");
 		}
 	}	
 });
 
 function enablePlay() {
+	$(".play").removeClass("disabledButton");
+	$(".play").addClass("highlighted");
 	$(".play i").removeClass("disabled");
 	$(".play i").addClass("regular");	
 }
 
 function disablePlay() {
 	$(".play").removeClass("highlighted");
-	$(".play i").removeClass("regular");	
+	$(".play").addClass("disabledButton");
+	$(".play i").removeClass("regular");
 	$(".play i").addClass("disabled");
 }
 
 function enableSave() {
+	$(".save").removeClass("disabledButton");
+	$(".save").addClass("highlighted");
 	$(".save i").removeClass("disabled");
 	$(".save i").addClass("regular");
 }
 
 function disableSave() {
 	$(".save").removeClass("highlighted");
+	$(".save").addClass("disabledButton");
 	$(".save i").removeClass("regular");	
 	$(".save i").addClass("disabled");	
 }

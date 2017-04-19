@@ -10,7 +10,7 @@ $(document).ready(function() {
 			$(this).css("border", "2px solid " + themeColors.regular);
 		},
 		function() {
-			$(this).css("border", "none");
+			$(this).css("border", "2px solid #FFF");
 		}
 	);
 
@@ -25,8 +25,11 @@ $(document).ready(function() {
 	});
 
 	$('input[type=file]').on('change', function(){
-		console.log('change name and character')
-		window.location.href = "addScript.html";
+		var file = $('input[type=file]').val();
+		if (file.indexOf('.txt') !== -1)
+			window.location.href = "addScript.html";
+		else
+			alert('Please upload a .txt file')
 	});
 });
 

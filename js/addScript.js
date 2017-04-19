@@ -13,7 +13,7 @@ $(document).ready(function() {
 			$(this).css("border", "2px solid " + themeColors.regular);
 		},
 		function() {
-			$(this).css("border", "none");
+			$(this).css("border", "2px solid #FFF");
 		}
 	);
 
@@ -32,6 +32,7 @@ $(document).ready(function() {
 	$('.addScript').click(function() {
     	console.log('add '+ $('input[type=text]').val() +' with part '+ $(selected).text());
     	window.location.href = "scriptsMenu.html";
+      
 	});
 
 });

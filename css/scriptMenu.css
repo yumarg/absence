@@ -46,6 +46,7 @@
 	font-size: 30px;
 	background-color: #be9ad3;
 	margin-top: 30px;
+	border: 2px solid #FFF;
 }
 
 input[type=file] {
@@ -75,6 +76,7 @@ input[type=file] {
 	overflow-y:scroll;
 	margin: 0 auto;
 	text-align: left;
+
 }
 
 #menu2 { 
@@ -90,7 +92,15 @@ input[type=file] {
     border: 1px solid #610996;
 }
 
+#menu ul li {
+    border: 1px solid #FFF;
+}
+
 #menu2 ul li:hover {
     border: 1px solid #610996;
+}
+
+#menu2 ul li {
+    border: 1px solid #FFF;
 }
 

@@ -4,8 +4,6 @@ $(document).ready(function() {
 	var play = false;
 	var save = false;
 
-	$(".record").addClass("highlighted");
-
 	$("#close").hover(
 		function() {
 			$("#close i").removeClass("fa-window-close-o");
@@ -17,14 +15,38 @@ $(document).ready(function() {
 		}
 	);
 
-	$(".actions div").hover(
+	$(".record").hover(
 		function() {
-			if ($($(this).find("i")[0]).hasClass("regular")) {
+			if ($(this).hasClass("highlighted")) {
+				$(this).css("border", "2px solid " + themeColors.regular);
+			}			
+		},
+		function() {
+			$(this).css("border", "none");
+		}
+	);
+
+	$(".save").hover(
+		function() {
+			if ($(this).hasClass("highlighted")) {
 				$(this).css("border", "2px solid " + themeColors.regular);
 			}
 		},
 		function() {
-			if ($($(this).find("i")[0]).hasClass("regular")) {
+			if ($(this).hasClass("highlighted")) {
+				$(this).css("border", "none");
+			}
+		}
+	);
+
+	$(".play").hover(
+		function() {
+			if ($(this).hasClass("highlighted")) {
+				$(this).css("border", "2px solid " + themeColors.regular);
+			}
+		},
+		function() {
+			if ($(this).hasClass("highlighted")) {
 				$(this).css("border", "none");
 			}
 		}
@@ -38,7 +60,9 @@ $(document).ready(function() {
 		if (!record) {
 			record = true;
 			pulse();
-			play = false;			
+			play = false;
+			disablePlay();
+			disableSave();
 		}
 		else {
 			record = false;
@@ -59,18 +83,16 @@ $(document).ready(function() {
 			if (document.getElementById("audioClip").ended) {
 				$(this).removeClass("highlighted");
 			}
-			$(".record").addClass("highlighted");
 			save = false;
 		}
 	});
 
 	$(".save").click(function() {
 		if (save) {
-			pulse();
+			// pulse();
 			$(this).addClass("highlighted");			
 			play = true;
-			saved = true;
-			$(".record").addClass("highlighted");	
+			saved = true;	
 			enablePlay();		
 		}
 	});
@@ -78,8 +100,6 @@ $(document).ready(function() {
 	function pulse() {
 		if (record) {
 			recording = true;
-			disableSave();
-			disablePlay();
 			setTimeout(function() {
 				$(".record").removeClass("highlighted");
 				setTimeout(function() {
@@ -87,10 +107,12 @@ $(document).ready(function() {
 					pulse();
 				}, 400);
 			}, 400);
+			$(".save").css("border", "2px solid " + themeColors.disabled);
+			$(".play").css("border", "2px solid " + themeColors.disabled);
 		}
-		else {
-			enableSave();		
+		else {		
 			$(".record").addClass("highlighted");
+			enableSave();
 		}
 	}	
 });
@@ -98,6 +120,7 @@ $(document).ready(function() {
 function enablePlay() {
 	$(".play").removeClass("disabledButton");
 	$(".play").addClass("highlighted");
+	$(".play").css("border", "none");
 	$(".play i").removeClass("disabled");
 	$(".play i").addClass("regular");	
 }
@@ -112,6 +135,7 @@ function disablePlay() {
 function enableSave() {
 	$(".save").removeClass("disabledButton");
 	$(".save").addClass("highlighted");
+	$(".save").css("border", "none");
 	$(".save i").removeClass("disabled");
 	$(".save i").addClass("regular");
 }

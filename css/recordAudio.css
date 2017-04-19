@@ -54,6 +54,13 @@
 	margin-top: 150px;
 }
 
+.icons {
+	float: right;
+	padding-left: 25px;
+	width: 100px;
+	height: 100px;
+}
+
 .record,
 .play,
 .save {

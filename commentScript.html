@@ -15,57 +15,57 @@
 </head>
 <body>
 	<div class="content">
-		<h1 class="title row col-md-12"><i class="regular fa fa-pencil-square-o" aria-hidden="true"></i>Comment Script</h1>
+		<h1 class="title row col-md-12"><i class="regular fa fa-pencil-square-o" aria-hidden="true"></i> View and Edit</h1>
 		<!-- <a href="#"><div id="close" class="row col-md-12"><i class="regular fa fa-window-close-o" aria-hidden="true"></i></div></a> -->
 
 		<div id="view" class="row col-md-24">
 			
 			<table align="center">
 			    <tbody class='scrollable' align="center">
-			        <tr>
+			        <tr class='selectable'>
 			            <td><div class="actor">Juliet:</div></td>
 			            <td colspan=3><div class="line">O Romeo, Romeo! wherefore art thou Romeo?</div></td>
-			            <td><button class="button regular fa fa-volume-up"  id="record-1" aria-hidden="true" width=''></button>
+			            <td><button class="button disabled fa fa-volume-up"  id="record-1" aria-hidden="true" width=''></button>
 			            <button class="button comment-btn disabled fa fa-comment" id="cmt-1" aria-hidden="true"></button></td>
 			        </tr>
 
-			        <tr>
+			        <tr class='selectable'>
 						<td><div class="actor">Romeo:</div></td>
 			            <td colspan=3><div class="line">Shall I hear more, or shall I speak at this?</div></td>
-			            <td><button class="button regular fa fa-microphone" id="record-2" aria-hidden="true"></button>
+			            <td><button class="button record-btn disabled fa fa-microphone" id="record-2" aria-hidden="true"></button>
 			            <button class="button comment-btn disabled fa fa-comment"  id="cmt-2" aria-hidden="true" width=''></button></td>
 			        </tr>
 
-			        <tr>
+			        <tr class='selectable'>
 			            <td><div class="actor">Juliet:</div></td>
 			            <td colspan=3><div class="line">'Tis but thy name that is my enemy.</div></td>
 			            <td><button class="button disabled fa fa-volume-up" id="record-3" aria-hidden="true"></button>
 			            <button class="button comment-btn disabled fa fa-comment" id="cmt-3" aria-hidden="true"></button></td>
 			        </tr>
 
-			        <tr>
+			        <tr class='selectable'>
 						<td><div class="actor">Romeo:</div></td>
 			            <td colspan=3><div class="line">I take thee at thy word: Call me but love, and I'll be new baptized;</div></td>
-			            <td><button class="button regular fa fa-microphone" id="record-4" aria-hidden="true"></button>
+			            <td><button class="button record-btn disabled fa fa-microphone" id="record-4" aria-hidden="true"></button>
 			            <button class="button comment-btn disabled fa fa-comment"  id="cmt-4" aria-hidden="true" width=''></button></td>
 			        </tr>
 
-			        <tr>
+			        <tr class='selectable'>
 			            <td><div class="actor">Juliet:</div></td>
 			            <td colspan=3><div class="line">What man art thou that thus bescreen'd in night</div></td>
 			            <td><button class="button disabled fa fa-volume-up" id="record-5" aria-hidden="true"></button></i>
 			            <button class="button comment-btn disabled fa fa-comment" id="cmt-5" aria-hidden="true"></button></td>
 			        </tr>
 
-			        <tr>
+			        <tr class='selectable'>
 						<td><div class="actor">Romeo:</div></td>
 			            <td colspan=3><div class="line">By a name
 						I know not how to tell thee who I am</div></td>
-			            <td><button class="button regular fa fa-microphone" id="record-6" aria-hidden="true"></button>
+			            <td><button class="button record-btn disabled fa fa-microphone" id="record-6" aria-hidden="true"></button>
 			            <button class="button comment-btn disabled fa fa-comment"  id="cmt-6" aria-hidden="true" width=''></td>
 			        </tr>
 
-			        <tr>
+			        <tr class='selectable'>
 			            <td><div class="actor">Juliet:</div></td>
 			            <td colspan=3><div class="line">My ears have not yet drunk a hundred words</div></td>
 			            <td><button class="button disabled fa fa-volume-up" id="record-7" aria-hidden="true"></button></i>
@@ -76,7 +76,15 @@
 			</table>
 		</div>
 	</div>
-	
+<!-- 
+	<div>
+		<input type="button" id="exit" value="Rehearse" style="display: block; margin: 0 auto;"></input>  
+	</div> -->
+
+	<div class="actions" align="center">
+		<div class="rehearse">Rehease script</div>
+	</div>
+
 <!-- 	<div id="progress">
   		<div id="bar"></div>
 	</div> -->
@@ -122,12 +130,59 @@ var SELECTED;
     };  
 })(); 
 
+$('.rehearse').click(function() {
+	window.location.href = "rehearseScript1.html";
+});
+
+$('.record-btn').click(function() {
+	window.location.href = "recordAudio.html";
+});
+
+$(".actions div").hover(
+	function() {
+		$(this).css("border", "2px solid " + themeColors.regular);
+	},
+	function() {
+		$(this).css("border", "none");
+	}
+);
+
+$(".selectable").hover(
+	function() {
+		$(this).css("border", "2px solid " + themeColors.regular);
+	},
+	function() {
+		$(this).css("border", "none");
+	}
+);
+
+$(".selectable").click(function() {
+	$('.selectable').each(function() {
+		$(this).css('background-color', '#FFF')
+	})
+		// $(this).css("border", "2px solid " + themeColors.regular);
+		$(this).css("background-color", themeColors.highlighted);
+});
+	// function() {
+		// $(this).css("border", "none");
+		// $(this).css("background-color", "#FFF");
+	// }
+// );
+
 // initialize empty comments
 var comments = {}
 $('.comment-btn').each(function() {
 	console.log('adding comment')
 	comments[$(this)[0].id] = '';
 })
+
+// $('#menu > ul > li').click(function() {
+//     if (selected!=null){
+//         $(selected).css("background-color", "#FFF");
+//     }
+//     selected = this;
+//     $(this).css("background-color", themeColors.highlighted);
+// });
 
 // artificially add a comment for startup
 comments['cmt-2'] = 'Make sure to enunciate this section!'

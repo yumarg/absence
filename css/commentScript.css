@@ -144,4 +144,8 @@ dialog {
 	cursor: pointer;
 }
 
+#close {
+	position: absolute;
+}
+
 

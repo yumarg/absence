@@ -41,7 +41,8 @@
 .addScript {
 	padding-top: 20px;
 	padding-bottom: 20px;
-	
+	cursor: pointer;
+	border-radius: 10px;
 	font-size: 30px;
 	background-color: #be9ad3;
 	margin-top: 30px;

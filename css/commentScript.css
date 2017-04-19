@@ -142,7 +142,12 @@ dialog {
 
 .selectable {
 	cursor: pointer;
+	border: 2px solid transparent;
 }
+
+./*selectable:hover {
+border: 2px solid black;
+}*/
 
 #close {
 	position: absolute;

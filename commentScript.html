@@ -148,20 +148,27 @@ $(".actions div").hover(
 	}
 );
 
-$(".selectable").hover(
-	function() {
-		$(this).css("border", "2px solid " + themeColors.regular);
-	},
-	function() {
-		$(this).css("border", "none");
-	}
-);
+// $(".selectable").hover(
+// 	function() {
+// 		$(this).css("border", "2px solid " + themeColors.regular);
+// 	},
+// 	function() {
+// 		$(this).css("border", "2px solid #FFF");
+// 	}
+// );
+
+$(".selectable").hover(function() {
+	$('.selectable').each(function() {
+		$(this).css('border', '2px solid transparent')
+	})
+	$(this).css("border", "2px solid " + themeColors.regular);
+});
 
 $(".selectable").click(function() {
 	$('.selectable').each(function() {
 		$(this).css('background-color', '#FFF')
 	})
-		$(this).css("background-color", themeColors.highlighted);
+	$(this).css("background-color", themeColors.highlighted);
 });
 
 // initialize empty comments

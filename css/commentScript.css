@@ -10,8 +10,8 @@
 }
 
 #close {
-	display: inline-block;
-	float:right;
+	/*display: inline-block;*/
+	/*float:right;*/
 	margin-top: -45px;
 	font-size: 40px;
 	cursor: pointer;
@@ -74,7 +74,9 @@ thead, tbody {
     display: block;
     font-size: 30px;
     border-collapse: collapse;
+    border: 2px solid white;
 }
+
 td {
 	padding-top: .5em;
 	padding-bottom: .5em;

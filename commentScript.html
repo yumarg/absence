@@ -20,7 +20,7 @@
 		
 
 		<div id="view" class="row col-md-24">
-			
+
 			<table align="center">
 			    <tbody class='scrollable' align="center">
 			        <tr class='selectable' id='default'>
@@ -157,18 +157,20 @@ $(".actions div").hover(
 // 	}
 // );
 
-$(".selectable").hover(function() {
-	$('.selectable').each(function() {
-		$(this).css('border', '2px solid transparent')
-	})
-	$(this).css("border", "2px solid " + themeColors.regular);
-});
+// $(".selectable").hover(function() {
+// 	$('.selectable').each(function() {
+// 		$(this).css('border', '2px solid transparent')
+// 	})
+// 	$(this).css("border", "2px solid " + themeColors.regular);
+// });
 
 $(".selectable").click(function() {
 	$('.selectable').each(function() {
 		$(this).css('background-color', '#FFF')
+		// $(this).css('border', '2px solid white');
 	})
 	$(this).css("background-color", themeColors.highlighted);
+	// $(this).css('border', '2px solid' + themeColors.regular);
 });
 
 // initialize empty comments
@@ -185,7 +187,7 @@ $(button).removeClass('disabled')
 $(button).addClass('regular')
 
 //
-$('#default').css("border", "2px solid " + themeColors.regular)
+// $('#default').css("border", "2px solid " + themeColors.regular)
 $('#default').css("background-color", themeColors.highlighted);
 
 </script>

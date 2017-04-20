@@ -89,7 +89,8 @@ input[type=file] {
 }
 
 #menu ul li:hover {
-    border: 1px solid #610996;
+    /*border: 1px solid #610996;*/
+    cursor: pointer;
 }
 
 #menu ul li {

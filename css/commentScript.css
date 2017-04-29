@@ -18,21 +18,21 @@
 }
 
 #view {
-	width: 900px;
-	height: 400px;
+	width: 1000px;
+	height: 600px;
 	margin: 0 auto;
-	margin-top: 100px;
+	margin-top: 25px;
 	padding: 0px 0px;
 	border: 5px solid #000;
 	border-radius: 10px;
 }
 
-.actorLine {
+/*.actorLine {
 	display: table;
 	width: 600px;
 	margin: 0 auto;
-	font-size: 25px;
-}
+	font-size: 20px;
+}*/
 
 .actor {
 	display: inline-block;
@@ -41,13 +41,15 @@
 	font-weight: bold;
 	vertical-align: top;
 	text-align: center;
+    font-size: 20pt;
 }
 
 .line {
 	display: inline-block;
-	width: 420px;
+	width: 600px;
 	margin-left: 30px;
 	text-align: left;
+    font-size: 20pt;
 }
 
 .actions {
@@ -71,10 +73,10 @@
 }
 
 thead, tbody {
-    display: block;
+/*    display: block;
     font-size: 30px;
     border-collapse: collapse;
-    border: 2px solid white;
+    border: 2px solid white;*/
 }
 
 td {
@@ -82,9 +84,16 @@ td {
 	padding-bottom: .5em;
 }
 tbody.scrollable {
-    height: 385px;
+    height: 590px;
     overflow-y: auto;
-    width: 850px;
+    width: 980px;
+}
+
+.actorBody {
+    display: block;
+    font-size: 30px;
+    border-collapse: collapse;
+    border: 2px solid white;
 }
 
 .button {
@@ -117,7 +126,7 @@ tbody.scrollable {
 #text {
 	width: 250px;
 	height: 60px;
-	font-size: 16px;
+	font-size: 10px;
 }
 
 #centerbox {
@@ -152,8 +161,9 @@ dialog {
 border: 2px solid black;
 }*/
 
-#close {
-	position: absolute;
-}
 
+/*.titleBar {
+    margin: 20px 0px;
+}
+*/
 

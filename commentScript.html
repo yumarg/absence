@@ -14,19 +14,48 @@
    	<script src="js/commentScript.js" type="text/javascript"></script>
 </head>
 <body>
-	<div class="content">
+<!-- 	<div class="content">
 		<h1 class="title row col-md-12"><i class="regular fa fa-pencil-square-o" aria-hidden="true"></i> View and Edit</h1>
-		<a href="scriptsMenu.html"><div id="close" class="row col-md-12"><i class="regular fa fa-arrow-circle-o-left" aria-hidden="true"></i></div></a>
+		<a href="viewScript.html"><div id="close" class="row col-md-12"><i class="regular fa fa-arrow-circle-o-left" aria-hidden="true"></i> Choose scripts</div></a>
+        <a href="viewScript.html"><div id="close" class="row col-md-12"><i class="regular fa fa-arrow-circle-o-left" aria-hidden="true"></i> Choose scripts</div></a>
+        <!-- <a href="viewScript.html"><div id="forward" class="row col-md-12"><i class="regular fa fa-arrow-circle-o-right" aria-hidden="true"></i> Choose scripts</div></a> -->
+    <!-- </div>  -->
+<table id="titleBar" width="100%" border="0" cellpadding="0" cellspacing="0">
+    <tbody><tr>
+
+        <th style="width: 20%;">
+            <h1 class="subtitle">
+                <a href="viewScript.html">
+                    <i class="regular fa fa-arrow-circle-o-left" aria-hidden="true"></i>
+                </a> Menu
+            </h1>
+        </th>
+
+        <th style="width: 40%;">
+            <h1 class="title"><i class="regular fa fa-pencil-square-o" aria-hidden="true"></i> View and Edit</h1>
+        </th>
+
+        <th style="width: 20%;">
+            <h1 class="subtitle">
+                Rehearse
+                <a href="rehearseScript1.html">
+                    <i class="regular fa fa-arrow-circle-o-right" aria-hidden="true"></i>
+                </a> 
+            </h1>
+        </th>
+
+    </tr></tbody>
+</table>
 		
 
 		<div id="view" class="row col-md-24">
 
 			<table align="center">
-			    <tbody class='scrollable' align="center">
+			    <tbody class='scrollable actorBody' align="center">
 			        <tr class='selectable' id='default'>
 			            <td><div class="actor">Juliet:</div></td>
 			            <td colspan=3><div class="line">O Romeo, Romeo! wherefore art thou Romeo?</div></td>
-			            <td><button class="button missing fa fa-volume-up"  id="record-1" aria-hidden="true" width=''></button>
+			            <td><button class="button missing fa fa-microphone"  id="record-1" aria-hidden="true" width=''></button>
 			            <button class="button comment-btn regular fa fa-comment" id="cmt-1" aria-hidden="true"></button></td>
 			        </tr>
 
@@ -40,7 +69,7 @@
 			        <tr class='selectable'>
 			            <td><div class="actor">Juliet:</div></td>
 			            <td colspan=3><div class="line">'Tis but thy name that is my enemy.</div></td>
-			            <td><button class="button missing fa fa-volume-up" id="record-3" aria-hidden="true"></button>
+			            <td><button class="button missing fa fa-microphone" id="record-3" aria-hidden="true"></button>
 			            <button class="button comment-btn disabled fa fa-comment" id="cmt-3" aria-hidden="true"></button></td>
 			        </tr>
 
@@ -54,37 +83,67 @@
 			        <tr class='selectable'>
 			            <td><div class="actor">Juliet:</div></td>
 			            <td colspan=3><div class="line">What man art thou that thus bescreen'd in night</div></td>
-			            <td><button class="button missing fa fa-volume-up" id="record-5" aria-hidden="true"></button></i>
+			            <td><button class="button missing fa fa-microphone" id="record-5" aria-hidden="true"></button></i>
 			            <button class="button comment-btn disabled fa fa-comment" id="cmt-5" aria-hidden="true"></button></td>
 			        </tr>
 
+                    <tr class='selectable'>
+                        <td><div class="actor">Romeo:</div></td>
+                        <td colspan=3><div class="line">I take thee at thy word: Call me but love, and I'll be new baptized;</div></td>
+                        <td><button class="button record-btn disabled fa fa-microphone" id="record-4" aria-hidden="true"></button>
+                        <button class="button comment-btn disabled fa fa-comment"  id="cmt-4" aria-hidden="true" width=''></button></td>
+                    </tr>
+
+                    <tr class='selectable'>
+                        <td><div class="actor">Juliet:</div></td>
+                        <td colspan=3><div class="line">What man art thou that thus bescreen'd in night</div></td>
+                        <td><button class="button missing fa fa-microphone" id="record-5" aria-hidden="true"></button></i>
+                        <button class="button comment-btn disabled fa fa-comment" id="cmt-5" aria-hidden="true"></button></td>
+                    </tr>
+
+                    <tr class='selectable'>
+                        <td><div class="actor">Romeo:</div></td>
+                        <td colspan=3><div class="line">By a name
+                        I know not how to tell thee who I am:</div></td>
+                        <td><button class="button record-btn disabled fa fa-microphone" id="record-4" aria-hidden="true"></button>
+                        <button class="button comment-btn disabled fa fa-comment"  id="cmt-4" aria-hidden="true" width=''></button></td>
+                    </tr>
+
+                    <tr class='selectable'>
+                        <td><div class="actor">Juliet:</div></td>
+                        <td colspan=3><div class="line">My ears have not yet drunk a hundred words
+                        Of that tongue's utterance, yet I know the sound:</div></td>
+                        <td><button class="button missing fa fa-microphone" id="record-5" aria-hidden="true"></button></i>
+                        <button class="button comment-btn disabled fa fa-comment" id="cmt-5" aria-hidden="true"></button></td>
+                    </tr>
+
 			        <tr class='selectable'>
 						<td><div class="actor">Romeo:</div></td>
-			            <td colspan=3><div class="line">By a name
-						I know not how to tell thee who I am</div></td>
+			            <td colspan=3><div class="line">Neither, fair saint, if either thee dislike.
+                        </div></td>
 			            <td><button class="button record-btn disabled fa fa-microphone" id="record-6" aria-hidden="true"></button>
 			            <button class="button comment-btn disabled fa fa-comment"  id="cmt-6" aria-hidden="true" width=''></td>
 			        </tr>
 
 			        <tr class='selectable'>
 			            <td><div class="actor">Juliet:</div></td>
-			            <td colspan=3><div class="line">My ears have not yet drunk a hundred words</div></td>
-			            <td><button class="button missing fa fa-volume-up" id="record-7" aria-hidden="true"></button></i>
+			            <td colspan=3><div class="line">How camest thou hither, tell me, and wherefore?</div></td>
+			            <td><button class="button missing fa fa-microphone" id="record-7" aria-hidden="true"></button></i>
 			            <button class="button comment-btn disabled fa fa-comment" id="cmt-7" aria-hidden="true"></button></td>
 			        </tr>
 
 			    </tbody>
 			</table>
 		</div>
-	</div>
+	
 <!-- 
 	<div>
 		<input type="button" id="exit" value="Rehearse" style="display: block; margin: 0 auto;"></input>  
 	</div> -->
 
-	<div class="actions" align="center">
-		<div class="rehearse">Rehearse script</div>
-	</div>
+	<!-- <div class="actions" align="center"> -->
+		<!-- <div class="rehearse">Rehearse script</div> -->
+	<!-- </div> -->
 
 <!-- 	<div id="progress">
   		<div id="bar"></div>
@@ -98,38 +157,74 @@
 
 <script>
 
-var SELECTED;
-
-(function() {  
-    var dialog = document.getElementById('window');  
-
-    // pop up the textarea, fill with previous comment
-    $('.comment-btn').click(function() {
-    	SELECTED = $(this);
-    	comment_id = SELECTED[0].id;
-    	previous_comment = comments[comment_id]
-    	// console.log('looking up: ', comment_id, 'previous comment:', previous_comment)
-    	$('textarea').val(previous_comment)
+// pop up the textarea, fill with previous comment
+$('.comment-btn').click(function(evt) {
+        var dialog = document.getElementById('window');
+        SELECTED = $(this);
+        comment_id = SELECTED[0].id;
+        previous_comment = comments[comment_id]
+        // console.log('looking up: ', comment_id, 'previous comment:', previous_comment)
+        $('textarea').val(previous_comment)
         dialog.show();
-    })
+        console.log('clicked')
+        CLICKING = true;
+        evt.stopPropagation();
+})
 
-    // close the textarea, update the comments dict
-    document.getElementById('exit').onclick = function() {  
-    	// get text input
-    	input = $('textarea')[0].value
-    	// update stored comments
-    	comments[SELECTED[0].id] = input;
-    	// enable button if there's a comment
-    	if (input.length > 0) {
-	    	SELECTED.removeClass('disabled');
-	    	SELECTED.addClass('regular')
-    	} else {
-	    	SELECTED.addClass('disabled');
-	    	SELECTED.removeClass('regular')
-	    }
-        dialog.close();  
-    };  
-})(); 
+// close the textarea, update the comments dict
+document.getElementById('exit').onclick = function() { 
+    closeWindow();
+}
+
+function closeWindow() {
+    var dialog = document.getElementById('window');
+
+    // get text input
+    input = $('textarea')[0].value
+    // update stored comments
+    comments[SELECTED[0].id] = input;
+    // enable button if there's a comment
+    if (input.length > 0) {
+        SELECTED.removeClass('disabled');
+        SELECTED.addClass('regular')
+    } else {
+        SELECTED.addClass('disabled');
+        SELECTED.removeClass('regular')
+    }
+    dialog.close();  
+    console.log('close')
+    CLICKING = false;
+}
+
+$('#view').click(function(event) { 
+    console.log('clicking: ', CLICKING)
+    if (CLICKING) {
+        closeWindow();
+    };
+})
+
+var SELECTED;
+var CLICKING = false;
+
+// (function() {  
+//     var dialog = document.getElementById('window');  
+
+//     // pop up the textarea, fill with previous comment
+//     $('.comment-btn').click(function() {
+//     	SELECTED = $(this);
+//     	comment_id = SELECTED[0].id;
+//     	previous_comment = comments[comment_id]
+//     	// console.log('looking up: ', comment_id, 'previous comment:', previous_comment)
+//     	$('textarea').val(previous_comment)
+//         dialog.show();
+//         console.log('clicked')
+//     })
+
+//     // // close the textarea, update the comments dict
+//     // document.getElementById('exit').onclick = function() {  
+//     //     closeWindow();
+//     // };  
+// })(); 
 
 $('.rehearse').click(function() {
 	window.location.href = "rehearseScript1.html";

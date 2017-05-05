@@ -52,6 +52,19 @@ $(document).ready(function() {
 		}
 	);
 
+	$(".pause").hover(
+		function() {
+			if ($(this).hasClass("highlighted")) {
+				$(this).css("border", "2px solid " + themeColors.regular);
+			}
+		},
+		function() {
+			if ($(this).hasClass("highlighted")) {
+				$(this).css("border", "2px solid #fff");
+			}
+		}
+	);	
+
 	$(".record").click(function() {
 		if (document.getElementById("audioClip")) {
 			document.getElementById("audioClip").pause();
@@ -63,6 +76,7 @@ $(document).ready(function() {
 			play = false;
 			disablePlay();
 			disableSave();
+			disablePause();
 		}
 		else {
 			record = false;
@@ -76,6 +90,7 @@ $(document).ready(function() {
 	$(".play").click(function() {
 		if (play) {
 			$("#audioClip").remove();
+			enablePause();
 			var audioElement = "<audio id='audioClip'><source src='audio/romeoLine.m4a' type='audio/mpeg'></audio>";
 			$("body").append(audioElement);
 			document.getElementById("audioClip").play();
@@ -93,7 +108,7 @@ $(document).ready(function() {
 			$(this).addClass("highlighted");			
 			play = true;
 			saved = true;	
-			enablePlay();		
+			enablePlay();	
 		}
 	});
 
@@ -109,6 +124,7 @@ $(document).ready(function() {
 			}, 400);
 			$(".save").css("border", "2px solid " + themeColors.disabled);
 			$(".play").css("border", "2px solid " + themeColors.disabled);
+			$(".pause").css("border", "2px solid " + themeColors.disabled);
 		}
 		else {		
 			$(".record").addClass("highlighted");
@@ -130,6 +146,21 @@ function disablePlay() {
 	$(".play").addClass("disabledButton");
 	$(".play i").removeClass("regular");
 	$(".play i").addClass("disabled");
+}
+
+function enablePause() {
+	$(".pause").removeClass("disabledButton");
+	$(".pause").addClass("highlighted");
+	$(".pause").css("border", "none");
+	$(".pause i").removeClass("disabled");
+	$(".pause i").addClass("regular");	
+}
+
+function disablePause() {
+	$(".pause").removeClass("highlighted");
+	$(".pause").addClass("disabledButton");
+	$(".pause i").removeClass("regular");
+	$(".pause i").addClass("disabled");
 }
 
 function enableSave() {

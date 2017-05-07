@@ -9,19 +9,19 @@
 	font-size: 40px;
 }
 
-#close {
+#back {
 	display: inline-block;
-	float:right;
+	float:left;
 	margin-top: -45px;
-	font-size: 40px;
+	font-size: 24px;
 	cursor: pointer;
 }
 
 #view {
-	width: 900px;
-	height: 400px;
+	width: 1000px;
+	height: 570px;
 	margin: 0 auto;
-	margin-top: 100px;
+	margin-top: 20px;
 	padding: 50px 0px;
 	border: 5px solid #000;
 	border-radius: 10px;
@@ -31,12 +31,12 @@
 	display: table;
 	width: 600px;
 	margin: 0 auto;
-	font-size: 25px;
+	font-size: 24px;
 }
 
 .actor {
 	display: inline-block;
-	width: 150px;
+	width: 140px;
 	font-style: italic;
 	vertical-align: top;
 	text-align: center;
@@ -48,10 +48,28 @@
 	margin-left: 30px;
 }
 
-.actions {
-	width: 580px;
+.feedback {
+	opacity: 0;	
+	background-color: #d8c2e4;
+	width: 200px;
+	padding: 10px;
+	border-radius: 3px;
 	margin: 0 auto;
-	margin-top: 150px;
+	margin-top: 280px;
+}
+
+.thefeedback {
+	margin: 0 auto;
+}
+
+.close {
+	cursor: pointer;
+}
+
+.actions {
+	width: 400px;
+	margin: 0 auto;
+	margin-top: 20px;
 }
 
 .icons {
@@ -70,9 +88,8 @@
 }
 
 .record,
-.play,
-.save,
-.pause {
+.play-pause,
+.save {
 	float: left;
 	cursor: pointer;
 	width: 100px;
@@ -88,8 +105,7 @@
 	border: 2px solid #fff;
 }
 
-.play,
-.save,
-.pause {
+.play-pause,
+.save {
 	border: 2px solid #838383;
 }

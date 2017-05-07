@@ -1,17 +1,19 @@
 $(document).ready(function() {
 	var recording = false;
 	var record = false;
-	var play = false;
+	var playpause = false;
+	var play = true;
 	var save = false;
+	console.log(sessionStorage.getItem("saved"));
 
-	$("#close").hover(
+	$(".close").hover(
 		function() {
-			$("#close i").removeClass("fa-window-close-o");
-			$("#close i").addClass("fa-window-close");
+			$(".close").removeClass("fa-window-close-o");
+			$(".close").addClass("fa-window-close");
 		},
 		function() {
-			$("#close i").removeClass("fa-window-close");
-			$("#close i").addClass("fa-window-close-o");			
+			$(".close").removeClass("fa-window-close");
+			$(".close").addClass("fa-window-close-o");			
 		}
 	);
 
@@ -39,7 +41,7 @@ $(document).ready(function() {
 		}
 	);
 
-	$(".play").hover(
+	$(".play-pause").hover(
 		function() {
 			if ($(this).hasClass("highlighted")) {
 				$(this).css("border", "2px solid " + themeColors.regular);
@@ -52,20 +54,12 @@ $(document).ready(function() {
 		}
 	);
 
-	$(".pause").hover(
-		function() {
-			if ($(this).hasClass("highlighted")) {
-				$(this).css("border", "2px solid " + themeColors.regular);
-			}
-		},
-		function() {
-			if ($(this).hasClass("highlighted")) {
-				$(this).css("border", "2px solid #fff");
-			}
-		}
-	);	
+	$(".close").click(function() {
+		$(".feedback").css("opacity", 0);
+	});
 
 	$(".record").click(function() {
+		$(".play-pause").prop("title", "play audio");		
 		if (document.getElementById("audioClip")) {
 			document.getElementById("audioClip").pause();
 			document.getElementById("audioClip").currentTime = 0;
@@ -73,10 +67,10 @@ $(document).ready(function() {
 		if (!record) {
 			record = true;
 			pulse();
-			play = false;
-			disablePlay();
+			playpause = false;
+			disablePlayPause();
 			disableSave();
-			disablePause();
+			$(".play-pause").html("<i class='disabled fa fa-play' aria-hidden='true'><i>");			
 		}
 		else {
 			record = false;
@@ -84,32 +78,52 @@ $(document).ready(function() {
 		}
 		if (!recording) {
 			save = true;
+			playpause = true;
+			play = true;
 		}	
 	});
 
-	$(".play").click(function() {
-		if (play) {
-			$("#audioClip").remove();
-			enablePause();
-			var audioElement = "<audio id='audioClip'><source src='audio/romeoLine.m4a' type='audio/mpeg'></audio>";
-			$("body").append(audioElement);
-			document.getElementById("audioClip").play();
-			$(this).addClass("highlighted");
-			if (document.getElementById("audioClip").ended) {
-				$(this).removeClass("highlighted");
+	$(".play-pause").click(function() {
+		if (playpause) {
+			if (play) {
+				$(".play-pause").html("<i class='regular fa fa-pause' aria-hidden='true'></i>");
+				$(".play-pause").prop("title", "pause audio");				
+				play = false;
+				if (document.getElementById("audioClip") != null && !document.getElementById("audioClip").ended) {				
+					document.getElementById("audioClip").play();					
+				}
+				else {
+					$("#audioClip").remove();
+					var audioElement = "<audio id='audioClip'><source src='audio/romeoLine.m4a' type='audio/mpeg'></audio>";
+					$("body").append(audioElement);
+					document.getElementById("audioClip").play();
+					$(this).addClass("highlighted");
+				}
+				$("#audioClip").bind("ended", function () {
+					$(this).removeClass("highlighted");
+					$(".play-pause").html("<i class='regular fa fa-play' aria-hidden='true'><i>");
+					$(".play-pause").prop("title", "play audio");
+					play = true;
+				});
 			}
-			save = false;
+			else {
+				play = true;
+				$(".play-pause").html("<i class='regular fa fa-play' aria-hidden='true'><i>");
+				$(".play-pause").prop("title", "play audio");
+				document.getElementById("audioClip").pause();
+			}
 		}
 	});
 
 	$(".save").click(function() {
 		if (save) {
-			// pulse();
+			$(".feedback").css("opacity", 1.0);
 			$(this).addClass("highlighted");			
-			play = true;
-			saved = true;	
-			enablePlay();	
+			playpause = true;
+			sessionStorage.setItem("saved", "true");
+			enablePlayPause();	
 		}
+		console.log(sessionStorage.getItem('saved'));
 	});
 
 	function pulse() {
@@ -123,44 +137,29 @@ $(document).ready(function() {
 				}, 400);
 			}, 400);
 			$(".save").css("border", "2px solid " + themeColors.disabled);
-			$(".play").css("border", "2px solid " + themeColors.disabled);
-			$(".pause").css("border", "2px solid " + themeColors.disabled);
+			$(".play-pause").css("border", "2px solid " + themeColors.disabled);
 		}
 		else {		
 			$(".record").addClass("highlighted");
 			enableSave();
+			enablePlayPause();
 		}
 	}	
 });
 
-function enablePlay() {
-	$(".play").removeClass("disabledButton");
-	$(".play").addClass("highlighted");
-	$(".play").css("border", "none");
-	$(".play i").removeClass("disabled");
-	$(".play i").addClass("regular");	
+function enablePlayPause() {
+	$(".play-pause").removeClass("disabledButton");
+	$(".play-pause").addClass("highlighted");
+	$(".play-pause").css("border", "none");
+	$(".play-pause i").removeClass("disabled");
+	$(".play-pause i").addClass("regular");	
 }
 
-function disablePlay() {
-	$(".play").removeClass("highlighted");
-	$(".play").addClass("disabledButton");
-	$(".play i").removeClass("regular");
-	$(".play i").addClass("disabled");
-}
-
-function enablePause() {
-	$(".pause").removeClass("disabledButton");
-	$(".pause").addClass("highlighted");
-	$(".pause").css("border", "none");
-	$(".pause i").removeClass("disabled");
-	$(".pause i").addClass("regular");	
-}
-
-function disablePause() {
-	$(".pause").removeClass("highlighted");
-	$(".pause").addClass("disabledButton");
-	$(".pause i").removeClass("regular");
-	$(".pause i").addClass("disabled");
+function disablePlayPause() {
+	$(".play-pause").removeClass("highlighted");
+	$(".play-pause").addClass("disabledButton");
+	$(".play-pause i").removeClass("regular");
+	$(".play-pause i").addClass("disabled");
 }
 
 function enableSave() {

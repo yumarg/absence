@@ -1,5 +1,5 @@
 $(document).ready(function() {
-
+	disableForward();
 	var allIcons = document.getElementsByClassName("icon");
     for (var icon = 0; icon < allIcons.length; icon++) {
       allIcons[icon].style.color = themeColors.regular;
@@ -24,8 +24,40 @@ $(document).ready(function() {
 		}
 	);
 
-	$('#forward').click(function() {
-    	window.location.href = "rehearseScript2.html";
+	$(".startrestart").hover(
+		function() {
+			$(this).css("border", "2px solid " + themeColors.regular);
+		},
+		function() {
+			$(this).css("border", "2px solid #fff");
+		}
+	);
+
+	$(".startrestart").click(function() {
+		enableForward();
+		$("#audioClip").remove();
+		var audioElement = "<audio id='audioClip'><source src='audio/julietFirstLine.m4a' type='audio/mpeg'></audio>";
+		$("body").append(audioElement);
+		document.getElementById("audioClip").play();
 	});
 
+	$('#forward').click(function() {
+		console.log("change");
+    	window.location.href = "rehearseScript2.html";
+	});	
 });
+
+function enableForward() {
+	$("#forward").removeClass("disabledButton");
+	$("#forward").addClass("highlighted");
+	$("#forward").css("border", "none");
+	$("#forward i").removeClass("disabled");
+	$("#forward i").addClass("regular");	
+}
+
+function disableForward() {
+	$("#forward").addClass("disabledButton");
+	$("#forward").removeClass("highlighted");
+	$("#forward i").addClass("disabled");
+	$("#forward i").removeClass("regular");	
+}

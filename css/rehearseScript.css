@@ -29,7 +29,7 @@
 .actorLine {
 	display: table;
 	width: 600px;
-	height: 300px;
+	height: 180px;
 	margin: 0 auto;
 	font-size: 25px;
 }
@@ -48,10 +48,28 @@
 	margin-left: 30px;
 }
 
-.actions {
-	width: 520px;
+.startrestart {
+	position: absolute;
+	background-color: #be9ad3;
+	width: 200px;
+	height: 100px;
+	padding: 10px;
+	margin-left: 32%;
+	cursor: pointer;
+	padding-top: 30px;
+	border-radius: 10px;
+	text-align: center;
+	font-size: 30px;	
+}
+
+.thestartrestart {
 	margin: 0 auto;
-	margin-top: 80px;	
+}
+
+.actions {
+	width: 260px;
+	margin: 0 auto;
+	margin-top: 170px;	
 }
 
 .nextLine{
@@ -63,8 +81,7 @@
 	text-align: center;
 	padding-top: 25px;
 	margin-left: 30px;
-	border-radius: 50%;	
-	background-color: #be9ad3;	
+	border-radius: 50%;		
 }
 
 .lineButton{

@@ -10,7 +10,7 @@ $(document).ready(function() {
 			$(this).css("border", "2px solid " + themeColors.regular);
 		},
 		function() {
-			$(this).css("border", "2px solid #FFF");
+			$(this).css("border", "2px solid #fff");
 		}
 	);
 

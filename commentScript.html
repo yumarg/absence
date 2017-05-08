@@ -107,9 +107,9 @@
 		</table>
 	</div>
 
-	<dialog class="window_container" id="window">  
-	  <p><textarea id="text" rows="5" cols="40" onclick="this.focus();this.select()"></textarea></p>
-	    <input type="button" id="exit" value="Close" style="display: block; margin: 0 auto;"></input>  
+	<dialog class="window_container" id="window">
+        <p><textarea id="text" rows="5" cols="40" onclick="this.focus();this.select()"></textarea></p>
+	    <input type="button" id="exit" value="Save" style="display: block; margin: 0 auto;"></input>  
 	</dialog>  
 </div>
 
@@ -117,17 +117,19 @@
 
 // pop up the textarea, fill with previous comment
 $('.comment-btn').click(function(evt) {
-        var dialog = document.getElementById('window');
-        SELECTED = $(this);
-        comment_id = SELECTED[0].id;
-        previous_comment = comments[comment_id]
-        // console.log('looking up: ', comment_id, 'previous comment:', previous_comment)
-        $('textarea').val(previous_comment)
-        dialog.show();
-        console.log('clicked')
-        CLICKING = true;
-        evt.stopPropagation();
-})
+    console.log(evt.pageX, evt.pageY);
+    var dialog = document.getElementById('window');
+    SELECTED = $(this);
+    comment_id = SELECTED[0].id;
+    previous_comment = comments[comment_id]
+    $('textarea').val(previous_comment)
+    dialog.show();
+    $(dialog).css("left", evt.pageX - 150);
+    $(dialog).css("top", evt.pageY + 20);
+    console.log('clicked')
+    CLICKING = true;
+    evt.stopPropagation();
+});
 
 // close the textarea, update the comments dict
 document.getElementById('exit').onclick = function() { 
@@ -159,30 +161,10 @@ $('#view').click(function(event) {
     if (CLICKING) {
         closeWindow();
     };
-})
+});
 
 var SELECTED;
 var CLICKING = false;
-
-// (function() {  
-//     var dialog = document.getElementById('window');  
-
-//     // pop up the textarea, fill with previous comment
-//     $('.comment-btn').click(function() {
-//     	SELECTED = $(this);
-//     	comment_id = SELECTED[0].id;
-//     	previous_comment = comments[comment_id]
-//     	// console.log('looking up: ', comment_id, 'previous comment:', previous_comment)
-//     	$('textarea').val(previous_comment)
-//         dialog.show();
-//         console.log('clicked')
-//     })
-
-//     // // close the textarea, update the comments dict
-//     // document.getElementById('exit').onclick = function() {  
-//     //     closeWindow();
-//     // };  
-// })(); 
 
 $('.rehearse').click(function() {
 	window.location.href = "rehearseScript1.html";
@@ -192,38 +174,11 @@ $('.record-btn').click(function() {
 	window.location.href = "recordAudio.html";
 });
 
-$(".actions div").hover(
-	function() {
-		$(this).css("border", "2px solid " + themeColors.regular);
-	},
-	function() {
-		$(this).css("border", "none");
-	}
-);
-
-// $(".selectable").hover(
-// 	function() {
-// 		$(this).css("border", "2px solid " + themeColors.regular);
-// 	},
-// 	function() {
-// 		$(this).css("border", "2px solid #FFF");
-// 	}
-// );
-
-// $(".selectable").hover(function() {
-// 	$('.selectable').each(function() {
-// 		$(this).css('border', '2px solid transparent')
-// 	})
-// 	$(this).css("border", "2px solid " + themeColors.regular);
-// });
-
 $(".selectable").click(function() {
 	$('.selectable').each(function() {
-		$(this).css('background-color', '#FFF')
-		// $(this).css('border', '2px solid white');
+		$(this).css('background-color', '#fff')
 	})
 	$(this).css("background-color", themeColors.highlighted);
-	// $(this).css('border', '2px solid' + themeColors.regular);
 });
 
 // initialize empty comments
@@ -231,7 +186,7 @@ var comments = {}
 $('.comment-btn').each(function() {
 	console.log('adding comment')
 	comments[$(this)[0].id] = '';
-})
+});
 
 // artificially add a comment for startup
 comments['cmt-1'] = 'Make sure to enunciate this section!'
@@ -239,8 +194,6 @@ var button = document.getElementById('cmt-1')
 $(button).removeClass('disabled')
 $(button).addClass('regular')
 
-//
-// $('#default').css("border", "2px solid " + themeColors.regular)
 $('#default').css("background-color", themeColors.highlighted);
 
 </script>

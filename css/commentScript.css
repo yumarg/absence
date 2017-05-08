@@ -72,11 +72,8 @@
 	cursor: pointer;
 }
 
-thead, tbody {
-/*    display: block;
-    font-size: 30px;
-    border-collapse: collapse;
-    border: 2px solid white;*/
+table {
+	border-collapse: collapse;
 }
 
 td {
@@ -96,6 +93,11 @@ tbody.scrollable {
     border: 2px solid white;
 }
 
+.actorBody tr {
+	
+	border: 2px solid white;
+}
+
 .button {
 	background-color: Transparent;
     /*background-color: #FFFFFF;*/
@@ -111,16 +113,13 @@ tbody.scrollable {
 }
 
 .window_container {
-    position: fixed;
-    top: 400px;
-    left: 50%;
-    width: 300px;
-    margin-left: -150px;
+    width: 300px;   
     height: 100px;
-    margin-top: -25px;
     background: #be9ad3;
     border: 5px solid #551A8B;
     border-radius: 10px;
+    padding: 5px 10px 20px 20px;
+    opacity: 0.9;
 }
 
 #text {
@@ -132,10 +131,6 @@ tbody.scrollable {
 #centerbox {
     left: 50%;
     position: absolute;
-}
-
-dialog {
-    padding: 5px 10px 20px 20px;
 }
 
 #progress {
@@ -152,18 +147,11 @@ dialog {
     background-color: #551A8B;
 }
 
+#exit {
+	cursor: pointer;
+}
+
 .selectable {
 	cursor: pointer;
 	border: 2px solid transparent;
 }
-
-./*selectable:hover {
-border: 2px solid black;
-}*/
-
-
-/*.titleBar {
-    margin: 20px 0px;
-}
-*/
-

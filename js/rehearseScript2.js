@@ -1,5 +1,7 @@
 $(document).ready(function() {
 
+	var showLine = false;
+
 	enableForwardAndBackward();
 
 	var allIcons = document.getElementsByClassName("icon");
@@ -32,7 +34,7 @@ $(document).ready(function() {
 	});
 	
 	$('#forward').click(function() {
-    	window.location.href = "rehearseScript4.html";    	
+    	window.location.href = "rehearseScript3.html";    	
 	});
 
 	$('.startrestart').click(function() {
@@ -40,7 +42,16 @@ $(document).ready(function() {
 	});
 
 	$('.lineButton').click(function() {
-    	window.location.href = "rehearseScript3.html";
+		if (showLine) {
+			showLine = false;
+			$(document.getElementsByClassName("line")[1]).html("[Say Your Line]");
+    		$(".lineButton").html("Show My Line");
+		}
+		else {
+			showLine = true;
+    		$(document.getElementsByClassName("line")[1]).html("Shall I hear more, or shall I speak at this?");
+    		$(".lineButton").html("Hide My Line");
+    	}
 	});
 
 });

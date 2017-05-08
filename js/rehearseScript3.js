@@ -1,6 +1,7 @@
 $(document).ready(function() {
 
 	enableBackward();
+	enableRepeat();
 
 	$("#audioClip").remove();
 	var audioElement = "<audio id='audioClip'><source src='audio/julietSecondLine.m4a' type='audio/mpeg'></audio>";
@@ -47,6 +48,10 @@ $(document).ready(function() {
 	$('#backward').click(function() {
     	window.location.href = "rehearseScript2.html";
 	});
+
+	$('#repeat').click(function() {
+		document.getElementById("audioClip").play();
+	});	
 });
 
 function enableBackward() {
@@ -55,4 +60,12 @@ function enableBackward() {
 	$("#backward").css("border", "none");
 	$("#backward i").removeClass("disabled");
 	$("#backward i").addClass("regular");	
+}
+
+function enableRepeat() {
+	$("#repeat").removeClass("disabledButton");
+	$("#repeat").addClass("highlighted");
+	$("#repeat").css("border", "none");
+	$("#repeat i").removeClass("disabled");
+	$("#repeat i").addClass("regular");		
 }

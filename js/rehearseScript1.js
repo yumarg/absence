@@ -1,5 +1,6 @@
 $(document).ready(function() {
 	disableForward();
+	disableRepeat();
 	var allIcons = document.getElementsByClassName("icon");
     for (var icon = 0; icon < allIcons.length; icon++) {
       allIcons[icon].style.color = themeColors.regular;
@@ -35,6 +36,7 @@ $(document).ready(function() {
 
 	$(".startrestart").click(function() {
 		enableForward();
+		enableRepeat();
 		$("#audioClip").remove();
 		var audioElement = "<audio id='audioClip'><source src='audio/julietFirstLine.m4a' type='audio/mpeg'></audio>";
 		$("body").append(audioElement);
@@ -47,6 +49,12 @@ $(document).ready(function() {
 			window.location.href = "rehearseScript2.html";
 		}
 	});	
+
+	$('#repeat').click(function() {
+		if (!$(this).hasClass("disabledButton")) {
+			document.getElementById("audioClip").play();
+		}
+	});
 });
 
 function enableForward() {
@@ -62,4 +70,19 @@ function disableForward() {
 	$("#forward").removeClass("highlighted");
 	$("#forward i").addClass("disabled");
 	$("#forward i").removeClass("regular");	
+}
+
+function enableRepeat() {
+	$("#repeat").removeClass("disabledButton");
+	$("#repeat").addClass("highlighted");
+	$("#repeat").css("border", "none");
+	$("#repeat i").removeClass("disabled");
+	$("#repeat i").addClass("regular");	
+}
+
+function disableRepeat() {
+	$("#repeat").addClass("disabledButton");
+	$("#repeat").removeClass("highlighted");
+	$("#repeat i").addClass("disabled");
+	$("#repeat i").removeClass("regular");	
 }

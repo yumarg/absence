@@ -2,7 +2,7 @@ $(document).ready(function() {
 
 	var showLine = false;
 
-	enableForwardAndBackward();
+	enableForwardBackwardRepeat();
 
 	var allIcons = document.getElementsByClassName("icon");
     for (var icon = 0; icon < allIcons.length; icon++) {
@@ -61,9 +61,12 @@ $(document).ready(function() {
     	}
 	});
 
+	$('#repeat').click(function() {
+		document.getElementById("audioClip").play();
+	});
 });
 
-function enableForwardAndBackward() {
+function enableForwardBackwardRepeat() {
 	$("#forward").removeClass("disabledButton");
 	$("#forward").addClass("highlighted");
 	$("#forward").css("border", "none");
@@ -74,4 +77,9 @@ function enableForwardAndBackward() {
 	$("#backward").css("border", "none");
 	$("#backward i").removeClass("disabled");
 	$("#backward i").addClass("regular");
+	$("#repeat").removeClass("disabledButton");
+	$("#repeat").addClass("highlighted");
+	$("#repeat").css("border", "none");
+	$("#repeat i").removeClass("disabled");
+	$("#repeat i").addClass("regular");	
 }

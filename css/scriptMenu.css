@@ -62,7 +62,6 @@ input[type=file] {
     width:0;
 }
 
-
 #playName {
     width:50%; 
     font-size: 20px;
@@ -99,4 +98,3 @@ input[type=file] {
 	font-size: 40px;
 	cursor: pointer;
 }
-

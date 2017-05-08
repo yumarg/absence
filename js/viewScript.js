@@ -19,12 +19,16 @@ $(document).ready(function() {
 
     $("#menu > ul > li").hover(
         function() {
-            $(this).css("background-color", themeColors.highlighted);
             $(this).css("border", "2px solid " + themeColors.regular);
         },
         function() {
-            $(this).css("background-color", "#fff");
-            $(this).css("border", "2px solid #fff");
+            if (selected != this) {
+                $(this).css("background-color", "#fff");
+                $(this).css("border", "2px solid #fff");
+            }
+            else {
+                $(this).css("border", "2px solid " + themeColors.highlighted);
+            }
         }
     );
 
@@ -34,6 +38,7 @@ $(document).ready(function() {
         }
         selected = this;
         $(this).css("background-color", themeColors.highlighted);
+        $("#menu > ul > li").css("border", "2px solid #fff");
     });
 
 	$('.viewScript').click(function() {

@@ -86,11 +86,11 @@
 
 .lineButton{
 	position: fixed;
-	width: 200px;
+	width: 180px;
 	cursor: pointer;	
 	height: 40px;
 	padding-top: 2px;
-	margin-left: 590px;
+	margin-left: 610px;
 	border-radius: 10px;
 	text-align: center;
 	font-size: 25px;

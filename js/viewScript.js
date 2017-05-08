@@ -17,6 +17,17 @@ $(document).ready(function() {
 		}
 	);
 
+    $("#menu > ul > li").hover(
+        function() {
+            $(this).css("background-color", themeColors.highlighted);
+            $(this).css("border", "2px solid " + themeColors.regular);
+        },
+        function() {
+            $(this).css("background-color", "#fff");
+            $(this).css("border", "2px solid #fff");
+        }
+    );
+
     $('#menu > ul > li').click(function() {
         if (selected!=null){
             $(selected).css("background-color", "#FFF");

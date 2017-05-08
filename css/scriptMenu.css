@@ -86,29 +86,12 @@ input[type=file] {
 
 }
 
-#menu2 { 
-	width:50%; 
-	height:100px; 
-	overflow:hidden; 
-	overflow-y:scroll;
-	margin: 0 auto;
-	text-align: left;
-}
-
 #menu ul li:hover {
     cursor: pointer;
 }
 
 #menu ul li {
-    border: 1px solid #FFF;
-}
-
-#menu2 ul li:hover {
-    cursor: pointer;
-}
-
-#menu2 ul li {
-    border: 1px solid #FFF;
+    border: 2px solid #FFF;
 }
 
 #close {

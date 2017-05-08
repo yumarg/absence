@@ -39,6 +39,7 @@ $(document).ready(function() {
 		var audioElement = "<audio id='audioClip'><source src='audio/julietFirstLine.m4a' type='audio/mpeg'></audio>";
 		$("body").append(audioElement);
 		document.getElementById("audioClip").play();
+		$(this).html("Restart");
 	});
 
 	$('#forward').click(function() {

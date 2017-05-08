@@ -9,6 +9,13 @@
 	font-size: 40px;
 }
 
+#back {
+	display: inline-block;
+	float:left;
+	margin-top: -45px;
+	cursor: pointer;
+}
+
 #view {
 	width: 1000px;
 	height: 400px;

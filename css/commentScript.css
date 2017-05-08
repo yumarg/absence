@@ -9,14 +9,28 @@
 	font-size: 40px;
 }
 
+#back {
+	display: inline-block;
+	float:left;
+	margin-top: -45px;
+	cursor: pointer;
+}
+
+#forward {
+	display: inline-block;
+	float:right;
+	margin-top: -45px;
+	cursor: pointer;
+}
+
 #view {
 	width: 1000px;
 	height: 570px;
 	margin: 0 auto;
-	margin-top: 25px;
+	margin-top: 10px;
 	padding: 0px 0px;
 	border: 5px solid #000;
-	border-radius: 10px;
+	border-radius: 10px;	
 	overflow-y: hidden;
 }
 

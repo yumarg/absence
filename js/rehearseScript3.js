@@ -14,7 +14,11 @@ $(document).ready(function() {
 		}
 	);
 
-	$('.nextLine').click(function() {
+	$('#backward').click(function() {
+    	window.location.href = "rehearseScript1.html";
+	});
+
+	$('#forward').click(function() {
     	window.location.href = "rehearseScript4.html";
 	});
 
@@ -23,26 +27,3 @@ $(document).ready(function() {
 	});
 
 });
-
-
-function enablePlay() {
-	$(".play i").removeClass("disabled");
-	$(".play i").addClass("regular");	
-}
-
-function disablePlay() {
-	$(".play").removeClass("highlighted");
-	$(".play i").removeClass("regular");	
-	$(".play i").addClass("disabled");
-}
-
-function enableSave() {
-	$(".save i").removeClass("disabled");
-	$(".save i").addClass("regular");
-}
-
-function disableSave() {
-	$(".save").removeClass("highlighted");
-	$(".save i").removeClass("regular");	
-	$(".save i").addClass("disabled");	
-}

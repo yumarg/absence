@@ -2,8 +2,6 @@
 	margin: 30px;
 }
 
-
-
 .title {
 	text-align: center;
 	width: 500px;
@@ -11,33 +9,20 @@
 	font-size: 40px;
 }
 
-#close {
-	display: inline-block;
-	float:right;
-	margin-top: -45px;
-	font-size: 40px;
-	cursor: pointer;
-}
-
-
-
 #view {
-	width: 900px;
-	height: 400px;
-
+	width: 1000px;
+	height: 570px;
 	margin: 0 auto;
-	margin-top: 100px;
+	margin-top: 10px;
 	padding: 50px 0px;
-
 	border: 5px solid #000;
 	border-radius: 10px;
 }
 
-
-
 .actorLine {
 	display: table;
 	width: 600px;
+	height: 300px;
 	margin: 0 auto;
 	font-size: 25px;
 }
@@ -56,50 +41,39 @@
 	margin-left: 30px;
 }
 
-
+/*.actionsBox {
+	width: 520px;
+	margin: 0 auto;
+}*/
 
 .actions {
-	position: absolute;
-	top: 450px;
-	padding-left: 200px;
-
-	width: 1000px;
+	width: 520px;
 	margin: 0 auto;
+	margin-top: 50px;	
 }
 
 .nextLine{
-	position: relative;
-	display: inline-block;
+	float: left;
 	cursor: pointer;
-	width: 80px;
-	height: 80px;
+	width: 100px;
+	height: 100px;
 	font-size: 40px;
 	text-align: center;
-	padding-top: 15px;
+	padding-top: 25px;
 	margin-left: 30px;
-	border-radius: 50%;
-	background-color: #be9ad3;
-	float: left;
+	border-radius: 50%;	
+	background-color: #be9ad3;	
 }
 
 .lineButton{
-	position: relative;
-	display: inline-block;
-	width:200px;
-	height: 60px;
+	width: 200px;
+	height: 100px;
 	cursor: pointer;
-
-	margin-top: 10px;
+	padding-top: 30px;
 	margin-left: 30px;
-	padding-top: 10px;
-	padding-bottom: 10px;
-
+	border-radius: 10px;
 	float: left;
-	
 	text-align: center;
 	font-size: 30px;
 	background-color: #be9ad3;
 }
-
-
-

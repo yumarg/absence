@@ -7,38 +7,25 @@ $(document).ready(function() {
 
 	$(".actions div").hover(
 		function() {
-			$(this).css("border", "2px solid " + themeColors.regular);
+			if ($(this).hasClass("disabledButton")) {
+				$(this).css("border", "2px solid " + themeColors.disabled);
+			}
+			else {
+				$(this).css("border", "2px solid " + themeColors.regular);
+			}
 		},
 		function() {
-			$(this).css("border", "2px solid #fff");
+			if ($(this).hasClass("disabledButton")) {
+				$(this).css("border", "2px solid " + themeColors.disabled);
+			}
+			else {
+				$(this).css("border", "2px solid #fff");
+			}
 		}
 	);
 
-	$('.nextLine').click(function() {
+	$('#forward').click(function() {
     	window.location.href = "rehearseScript2.html";
 	});
 
 });
-
-
-function enablePlay() {
-	$(".play i").removeClass("disabled");
-	$(".play i").addClass("regular");	
-}
-
-function disablePlay() {
-	$(".play").removeClass("highlighted");
-	$(".play i").removeClass("regular");	
-	$(".play i").addClass("disabled");
-}
-
-function enableSave() {
-	$(".save i").removeClass("disabled");
-	$(".save i").addClass("regular");
-}
-
-function disableSave() {
-	$(".save").removeClass("highlighted");
-	$(".save i").removeClass("regular");	
-	$(".save i").addClass("disabled");	
-}

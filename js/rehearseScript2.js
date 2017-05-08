@@ -9,8 +9,6 @@ $(document).ready(function() {
       allIcons[icon].style.color = themeColors.regular;
     }
 
-    $(".actions").css("width", 500);
-
 	$(".actions div").hover(
 		function() {
 			$(this).css("border", "2px solid " + themeColors.regular);
@@ -19,6 +17,15 @@ $(document).ready(function() {
 			$(this).css("border", "2px solid #fff");
 		}
 	);
+
+	$(".lineButton").hover(
+		function() {
+			$(this).css("border", "2px solid " + themeColors.regular);
+		},
+		function() {
+			$(this).css("border", "2px solid #fff");
+		}
+	);	
 
 	$(".startrestart").hover(
 		function() {

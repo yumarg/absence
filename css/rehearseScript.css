@@ -85,7 +85,7 @@
 }
 
 .lineButton{
-	position: fixed;
+	position: absolute;
 	width: 180px;
 	cursor: pointer;	
 	height: 40px;

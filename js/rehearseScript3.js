@@ -1,12 +1,16 @@
 $(document).ready(function() {
 
-	enableBackward();
+	disableBackward();
 	enableRepeat();
 
 	$("#audioClip").remove();
 	var audioElement = "<audio id='audioClip'><source src='audio/julietSecondLine.m4a' type='audio/mpeg'></audio>";
 	$("body").append(audioElement);
-	document.getElementById("audioClip").play();	
+	document.getElementById("audioClip").play();
+	document.getElementById("audioClip").onended = function() {
+		playing = false;
+		enableBackward();
+	};		
 
 	var allIcons = document.getElementsByClassName("icon");
     for (var icon = 0; icon < allIcons.length; icon++) {
@@ -42,15 +46,30 @@ $(document).ready(function() {
 	);
 
 	$('.startrestart').click(function() {
-		window.location.href = "rehearseScript1.html";
+		window.location.href = "rehearseScript1.html";		
 	});	
 
 	$('#backward').click(function() {
-    	window.location.href = "rehearseScript2.html";
+		if (document.getElementById("audioClip").ended) {
+			window.location.href = "rehearseScript2.html";
+		}
 	});
 
 	$('#repeat').click(function() {
-		document.getElementById("audioClip").play();
+		if (!$(this).hasClass("disabledButton")) {
+			disableBackward();
+			$("#audioClip").remove();
+			var audioElement = "<audio id='audioClip'><source src='audio/julietSecondLine.m4a' type='audio/mpeg'></audio>";
+			$("body").append(audioElement);
+			document.getElementById("audioClip").play();
+			document.getElementById("audioClip").onended = function() {
+				playing = false;
+				enableBackward();
+			};			
+		}
+		else {
+			disableBackward();
+		}		
 	});	
 });
 
@@ -60,6 +79,14 @@ function enableBackward() {
 	$("#backward").css("border", "none");
 	$("#backward i").removeClass("disabled");
 	$("#backward i").addClass("regular");	
+}
+
+function disableBackward() {
+	$("#backward").addClass("disabledButton");
+	$("#backward").removeClass("highlighted");
+	$("#backward i").addClass("disabled");
+	$("#backward i").removeClass("regular");
+	$("#backward").css("border", "2px solid " + themeColors.disabled);	
 }
 
 function enableRepeat() {

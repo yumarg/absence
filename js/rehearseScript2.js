@@ -2,7 +2,8 @@ $(document).ready(function() {
 
 	var showLine = false;
 
-	enableForwardBackwardRepeat();
+	enableForwardBackward();
+	disableRepeat();
 
 	var allIcons = document.getElementsByClassName("icon");
     for (var icon = 0; icon < allIcons.length; icon++) {
@@ -11,10 +12,20 @@ $(document).ready(function() {
 
 	$(".actions div").hover(
 		function() {
-			$(this).css("border", "2px solid " + themeColors.regular);
+			if ($(this).hasClass("disabledButton")) {
+				$(this).css("border", "2px solid " + themeColors.disabled);
+			}
+			else {
+				$(this).css("border", "2px solid " + themeColors.regular);
+			}
 		},
 		function() {
-			$(this).css("border", "2px solid #fff");
+			if ($(this).hasClass("disabledButton")) {
+				$(this).css("border", "2px solid " + themeColors.disabled);
+			}
+			else {
+				$(this).css("border", "2px solid #fff");
+			}
 		}
 	);
 
@@ -37,11 +48,11 @@ $(document).ready(function() {
 	);	
 
 	$('#backward').click(function() {
-    	window.location.href = "rehearseScript1.html";
+		window.location.href = "rehearseScript1.html";
 	});
 	
 	$('#forward').click(function() {
-    	window.location.href = "rehearseScript3.html";    	
+    	window.location.href = "rehearseScript3.html";
 	});
 
 	$('.startrestart').click(function() {
@@ -60,13 +71,9 @@ $(document).ready(function() {
     		$(".lineButton").html("Hide My Line");
     	}
 	});
-
-	$('#repeat').click(function() {
-		document.getElementById("audioClip").play();
-	});
 });
 
-function enableForwardBackwardRepeat() {
+function enableForwardBackward() {
 	$("#forward").removeClass("disabledButton");
 	$("#forward").addClass("highlighted");
 	$("#forward").css("border", "none");
@@ -77,9 +84,11 @@ function enableForwardBackwardRepeat() {
 	$("#backward").css("border", "none");
 	$("#backward i").removeClass("disabled");
 	$("#backward i").addClass("regular");
-	$("#repeat").removeClass("disabledButton");
-	$("#repeat").addClass("highlighted");
-	$("#repeat").css("border", "none");
-	$("#repeat i").removeClass("disabled");
-	$("#repeat i").addClass("regular");	
+}
+
+function disableRepeat() {
+	$("#repeat").addClass("disabledButton");
+	$("#repeat").removeClass("highlighted");
+	$("#repeat i").addClass("disabled");
+	$("#repeat i").removeClass("regular");	
 }

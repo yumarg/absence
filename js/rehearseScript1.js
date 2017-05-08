@@ -43,8 +43,9 @@ $(document).ready(function() {
 	});
 
 	$('#forward').click(function() {
-		console.log("change");
-    	window.location.href = "rehearseScript2.html";
+		if (!$(this).hasClass("disabledButton")) {
+			window.location.href = "rehearseScript2.html";
+		}
 	});	
 });
 

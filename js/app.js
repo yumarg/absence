@@ -5,8 +5,8 @@ var saved = false;
 $(document).ready(function() {
 	$("#home").hover(
 		function() {
-			$("#home").html("<i class='regular fa fa-file-text-o' aria-hidden='true'></i><span style='color: #000; font-size: 20px'>&nbsp; Back to Script Menu</span>");
-			$("#home").animate({"width": "250px"});	
+			$("#home").html("<i class='regular fa fa-file-text-o' aria-hidden='true'></i><span style='color: #000; font-size: 30px'>&nbsp; Back to Script Menu</span>");
+			$("#home").animate({"width": "350px"});	
 			$("#home").css("opacity", 0.9);		
 		},
 		function() {			

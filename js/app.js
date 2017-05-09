@@ -14,4 +14,7 @@ $(document).ready(function() {
 			$("#home").animate({"width": "140px"});			
 		}
 	);
+	$("#home").click(function() {
+		window.location.href = "scriptsMenu.html";
+	})
 });

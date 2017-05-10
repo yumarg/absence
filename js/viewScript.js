@@ -8,17 +8,6 @@ $(document).ready(function() {
       allIcons[icon].style.color = themeColors.regular;
     }
 
-    $(document).keyup(function(e){
-        if(e.keyCode == 46) {
-            alert('Delete key released');
-            
-            $(".m").removeChild(selected);
-            
-        }else if(e.keyCode == 90) {
-            alert('undo key released');
-        }
-    });
-
     $("#menu > ul > li").hover(
         function(){},
         function() {

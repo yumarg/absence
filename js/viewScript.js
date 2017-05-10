@@ -8,15 +8,6 @@ $(document).ready(function() {
       allIcons[icon].style.color = themeColors.regular;
     }
 
-    $("#menu > ul > li").hover(
-        function(){},
-        function() {
-            if (selected != this) {
-                $(this).css("background-color", "#fff");  
-            }   
-        }
-    );
-
     $('#menu > ul > li').click(function() {
         if (selected!=null){
             $(selected).css("background-color", "#FFF");

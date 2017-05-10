@@ -6,6 +6,8 @@ $(document).ready(function() {
 	var save = false;
 	console.log(sessionStorage.getItem("saved"));
 
+	$(".line").html(sessionStorage.getItem("lineToRecord"));
+
 	$(".close").hover(
 		function() {
 			$(".close").removeClass("fa-window-close-o");
@@ -122,7 +124,18 @@ $(document).ready(function() {
 			$(".feedback").css("opacity", 1.0);
 			$(this).addClass("highlighted");			
 			playpause = true;
-			sessionStorage.setItem("saved", "true");
+			if (sessionStorage.getItem("saved") == "record-1") {
+				sessionStorage.setItem("saved1", "1");
+			}
+			else if (sessionStorage.getItem("saved") == "record-2") {
+				sessionStorage.setItem("saved2", "1");
+			}
+			else if (sessionStorage.getItem("saved") == "record-3") {
+				sessionStorage.setItem("saved3", "1");
+			}						
+			else if (sessionStorage.getItem("saved") == "record-4") {
+				sessionStorage.setItem("saved4", "1");
+			}
 			enablePlayPause();	
 		}
 		console.log(sessionStorage.getItem('saved'));

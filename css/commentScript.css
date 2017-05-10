@@ -91,6 +91,7 @@ tbody.scrollable {
     font-size: 30px;
     border-collapse: collapse;
     border: 2px solid white;
+    padding-bottom: 30px;
 }
 
 .actorBody tr {

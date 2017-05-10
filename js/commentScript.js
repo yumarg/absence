@@ -1,15 +1,8 @@
 $(document).ready(function() {
-    if (sessionStorage.getItem("saved") != null) {
-        if (sessionStorage.getItem("saved") == "true") {
-            $($($($(".actorBody").find(".selectable")[1]).find("button")[0])[0]).removeClass("disabled");
-            $($($($(".actorBody").find(".selectable")[1]).find("button")[0])[0]).addClass("regular");
+    for (var i = 1; i < 5; i++) {
+        if (sessionStorage.getItem("saved"+i) == "1") {
+            $("#record-"+i).removeClass("disabled");
+            $("#record-"+i).addClass("regular");
         }
-        else {
-            $($($($(".actorBody").find(".selectable")[1]).find("button")[0])[0]).removeClass("regular");
-            $($($($(".actorBody").find(".selectable")[1]).find("button")[0])[0]).addClass("disabled");      
-        }
-    }
-    else {
-        sessionStorage.setItem("saved", "false");
-    }
+    }        
 });

@@ -69,29 +69,20 @@ input[type=file] {
     font-weight: bold;
 }
 
-#playName:focus{
-    outline:none;
-    border-color: #be9ad3;
-    box-shadow:0 0 5px #be9ad3;
-}
 
 #menu { 
 	width:50%; 
-	height:200px; 
+	height:50%; 
 	overflow:hidden; 
 	overflow-y:scroll;
 	margin: 0 auto;
 	text-align: left;
-
 }
 
 #menu ul li:hover {
     cursor: pointer;
 }
 
-#menu ul li {
-    border: 2px solid #FFF;
-}
 
 #close {
 	margin-top: -45px;

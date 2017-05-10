@@ -8,27 +8,23 @@ $(document).ready(function() {
       allIcons[icon].style.color = themeColors.regular;
     }
 
-	$(".actions div").hover(
-		function() {
-			$(this).css("border", "2px solid " + themeColors.regular);
-		},
-		function() {
-			$(this).css("border", "2px solid #FFF");
-		}
-	);
+    $(document).keyup(function(e){
+        if(e.keyCode == 46) {
+            alert('Delete key released');
+            
+            $(".m").removeChild(selected);
+            
+        }else if(e.keyCode == 90) {
+            alert('undo key released');
+        }
+    });
 
     $("#menu > ul > li").hover(
-        function() {
-            $(this).css("border", "2px solid " + themeColors.regular);
-        },
+        function(){},
         function() {
             if (selected != this) {
-                $(this).css("background-color", "#fff");
-                $(this).css("border", "2px solid #fff");
-            }
-            else {
-                $(this).css("border", "2px solid " + themeColors.highlighted);
-            }
+                $(this).css("background-color", "#fff");  
+            }   
         }
     );
 
@@ -38,8 +34,14 @@ $(document).ready(function() {
         }
         selected = this;
         $(this).css("background-color", themeColors.highlighted);
-        $("#menu > ul > li").css("border", "2px solid #fff");
     });
+
+     $('#menu > ul > li').dblclick(function() {
+        selected = this;
+        console.log('see the script of '+ $(selected).text());
+        window.location.href = "commentScript.html";
+    });
+
 
 	$('.viewScript').click(function() {
     	console.log('see the script of '+ $(selected).text());

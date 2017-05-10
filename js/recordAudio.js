@@ -59,6 +59,7 @@ $(document).ready(function() {
 	});
 
 	$(".record").click(function() {
+		$(".feedback").css("opacity", 0);
 		$(".play-pause").prop("title", "play audio");		
 		if (document.getElementById("audioClip")) {
 			document.getElementById("audioClip").pause();
@@ -84,6 +85,7 @@ $(document).ready(function() {
 	});
 
 	$(".play-pause").click(function() {
+		$(".feedback").css("opacity", 0);		
 		if (playpause) {
 			if (play) {
 				$(".play-pause").html("<i class='regular fa fa-pause' aria-hidden='true'></i>");
